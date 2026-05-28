@@ -161,6 +161,11 @@ def process_video(video_path,
                   show_frame_num=True,
                   resize_output=None):
 
+    os.makedirs(
+        "outputs",
+        exist_ok=True
+    )
+
     cap = cv2.VideoCapture(video_path)
 
     fps = cap.get(cv2.CAP_PROP_FPS) or 25
