@@ -78,9 +78,17 @@ if uploaded_file is not None:
             "Segmented Output"
         )
 
-        st.video(
-            OUTPUT_SEG_VIDEO
-        )
+        if os.path.exists(OUTPUT_SEG_VIDEO):
+            st.subheader("Segmented Output")
+            st.video(OUTPUT_SEG_VIDEO)
+        
+        if os.path.exists(OUTPUT_BLEND_VIDEO):
+            st.subheader("Blend Output")
+            st.video(OUTPUT_BLEND_VIDEO)
+        
+        if os.path.exists(OUTPUT_SIDE_VIDEO):
+            st.subheader("Side-by-Side Output")
+            st.video(OUTPUT_SIDE_VIDEO)
 
         st.subheader(
             "Blend Output"
