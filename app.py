@@ -29,6 +29,10 @@ uploaded_file = st.file_uploader(
 )
 
 if uploaded_file is not None:
+        os.makedirs(
+        "uploads",
+        exist_ok=True
+    )
 
     save_path = os.path.join(
         "uploads",
