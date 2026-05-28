@@ -32,12 +32,12 @@ if uploaded_file is not None:
 
     # Create uploads folder if missing
     os.makedirs(
-        "uploads",
+        ""temp_uploads",
         exist_ok=True
     )
 
     save_path = os.path.join(
-        "uploads",
+        ""temp_uploads",
         uploaded_file.name
     )
 
