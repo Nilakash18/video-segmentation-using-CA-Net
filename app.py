@@ -22,50 +22,33 @@ st.write(
 )
 
 # ===== Upload =====
-
-uploaded_file = st.file_uploader(
-    "Upload Video",
-    type=["mp4","avi","mov"]
-)
-
-if uploaded_file is not None:
-    
-        os.makedirs(
-        "uploads",
-        exist_ok=True
-    )
-
-    save_path = os.path.join(
-        "uploads",
-        uploaded_file.name
-    )
-
-    with open(save_path, "wb") as f:
-        f.write(
-            uploaded_file.getbuffer()
+        # ===== Upload =====
+        
+        uploaded_file = st.file_uploader(
+            "Upload Video",
+            type=["mp4","avi","mov"]
         )
-
-    st.success(
-        "Video uploaded successfully!"
-    )
-
-    if st.button(
-        "Run Segmentation"
-    ):
-
-        with st.spinner(
-            "Processing video..."
-        ):
-            process_video(
-                save_path,
-                resize_output=(640, 360),
-                frame_skip=2,
-                max_frames=300
+        
+        if uploaded_file is not None:
+        
+            os.makedirs(
+                "uploads",
+                exist_ok=True
             )
-
-        st.success(
-            "Segmentation Complete!"
-        )
+        
+            save_path = os.path.join(
+                "uploads",
+                uploaded_file.name
+            )
+        
+            with open(save_path, "wb") as f:
+                f.write(
+                    uploaded_file.getbuffer()
+                )
+        
+            st.success(
+                "Video uploaded successfully!"
+            )
 
         # ===== Show Outputs =====
 
