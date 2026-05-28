@@ -24,7 +24,7 @@ st.write(
 # ===== Upload =====
         # ===== Upload =====
         
-        uploaded_file = st.file_uploader(
+    uploaded_file = st.file_uploader(
             "Upload Video",
             type=["mp4","avi","mov"]
         )
